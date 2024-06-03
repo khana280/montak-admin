@@ -10,22 +10,36 @@
         </div>
         <ul class="metismenu list-unstyled " id="side-menu">
           <li>
-            <a href="index.html">
+            <RouterLink to="/" :class="$route.path == '/' ? 'mm-active' : ''">
               <i data-feather="home"></i>
               <span data-key="t-dashboard">Beranda</span>
-            </a>
+            </RouterLink>
           </li>
-          <li>
-            <a href="index.html">
+          <li :class="$route.path.includes('usulan-judul') ? 'mm-active' : ''">
+            <a href="javascript: void(0);" class="has-arrow">
               <i data-feather="upload-cloud"></i>
               <span data-key="t-dashboard">Usulan Judul</span>
             </a>
+            <ul class="sub-menu mm-collapse" :class="$route.path.includes('usulan-judul') ? 'mm-show' : ''"
+            aria-expanded="false">
+              <li :class="$route.path.includes('kerja-praktek') ? 'mm-active' : ''">
+                <RouterLink to="/mahasiswa/usulan-judul/kerja-praktek">
+                  <span data-key="t-calendar">Kerja Praktek</span>
+                </RouterLink>
+              </li>
+
+              <li :class="$route.path.includes('tugas-akhir') ? 'mm-active' : ''">
+                <RouterLink to="/mahasiswa/usulan-judul/tugas-akhir">
+                  <span data-key="t-chat">Tugas Akhir</span>
+                </RouterLink>
+              </li>
+            </ul>
           </li>
           <li>
-            <a href="index.html">
+            <RouterLink to="/mahasiswa/pembimbingan">
               <i data-feather="check-square"></i>
               <span data-key="t-dashboard">Pembimbingan</span>
-            </a>
+            </RouterLink>
           </li>
           <li>
             <a href="index.html">
@@ -49,9 +63,13 @@
 import { onMounted } from 'vue';
 
 declare const feather: any;
+declare const $: any;
+
 onMounted(() => {
   feather.replace();
+  $('#side-menu').metisMenu();
 });
+
 </script>
 
 <style lang="css">

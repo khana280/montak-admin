@@ -7,9 +7,33 @@ const routes: Array<RouteRecordRaw> = [
     path: '/',
     name: 'Beranda',
     meta: {
-      title  : 'Beranda'
+      title: 'Beranda'
     },
-    component: () => import('../views/administrator/Home.vue')
+    component: () => import('../views/administrator/Dashboard.vue')
+  },
+  {
+    path: '/mahasiswa/usulan-judul/kerja-praktek',
+    name: 'Usulan Judul Kerja Praktek',
+    meta: {
+      title: 'Usulan Judul Kerja Praktek'
+    },
+    component: () => import('../views/administrator/PPWT.vue')
+  },
+  {
+    path: '/mahasiswa/usulan-judul/tugas-akhir',
+    name: 'Usulan Judul Tugas Akhir',
+    meta: {
+      title: 'Usulan Judul Tugas Akhir'
+    },
+    component: () => import('../views/administrator/PPFT.vue')
+  },
+  {
+    path: '/mahasiswa/pembimbingan',
+    name: 'Pembimbingan',
+    meta: {
+      title: 'Pembimbingan'
+    },
+    component: () => import('../views/administrator/Mentoring.vue')
   }
 ];
 

@@ -6,19 +6,19 @@
         <div class="navbar-brand-box">
           <a href="index.html" class="logo logo-dark">
             <span class="logo-sm">
-              <img src="https://unira.ac.id/img/logo.png" alt="" height="24">
+              <img src="https://unira.ac.id/img/logo.png" alt="logo-montak" height="24">
             </span>
             <span class="logo-lg">
-              <img src="https://unira.ac.id/img/logo.png" alt="" height="24"> <span class="logo-txt">MONTAK</span>
+              <img src="https://unira.ac.id/img/logo.png" alt="logo-montak" height="24"> <span class="logo-txt">MONTAK</span>
             </span>
           </a>
 
           <a href="index.html" class="logo logo-light">
             <span class="logo-sm">
-              <img src="https://unira.ac.id/img/logo.png" alt="" height="24">
+              <img src="https://unira.ac.id/img/logo.png" alt="logo-montak" height="24">
             </span>
             <span class="logo-lg">
-              <img src="https://unira.ac.id/img/logo.png" alt="" height="24"> <span class="logo-txt">MONTAK</span>
+              <img src="https://unira.ac.id/img/logo.png" alt="logo-montak" height="24"> <span class="logo-txt">MONTAK</span>
             </span>
           </a>
         </div>
@@ -30,9 +30,10 @@
       </div>
 
       <div class="d-flex">
+
         <div class="dropdown d-inline-block border-start">
-          <button type="button" class="btn header-item right-bar-toggle mx-2">
-            <i data-feather="power" class="icon-lg"></i>
+          <button type="button" class="btn header-item right-bar-toggle">
+            <i data-feather="bell" class="icon-lg"></i>
           </button>
         </div>
 
@@ -54,7 +55,11 @@
                 class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout</a>
           </div>
         </div>
-
+        <div class="dropdown d-inline-block border-end">
+          <button type="button" class="btn header-item right-bar-toggle">
+            <i data-feather="power" class="icon-lg"></i>
+          </button>
+        </div>
       </div>
     </div>
   </header>
@@ -65,7 +70,7 @@ import { onMounted } from 'vue';
 
 onMounted(() => {
   const width = window.innerWidth;
-  if(width < 1024) {
+  if (width < 1024) {
     document.body.setAttribute('data-sidebar-size', 'sm');
   } else {
     document.body.setAttribute('data-sidebar-size', 'lg');
@@ -75,20 +80,19 @@ onMounted(() => {
 
 function toggleSideBar() {
   const width = window.innerWidth;
-  if(width >= 1024) {
-    if(document.body.getAttribute('data-sidebar-size') === 'lg') {
+  if (width >= 1024) {
+    if (document.body.getAttribute('data-sidebar-size') === 'lg') {
       document.body.setAttribute('data-sidebar-size', 'sm');
     } else {
       document.body.setAttribute('data-sidebar-size', 'lg');
     }
   }
- 
-  if(width < 1024) {
-    if(document.body.getAttribute('data-sidebar-size') === 'sm') {
+
+  if (width < 1024) {
+    if (document.body.getAttribute('data-sidebar-size') === 'sm') {
       document.body.setAttribute('data-sidebar-size', 'lg');
     }
     document.body.classList.toggle('sidebar-enable');
-    // berikan transition
   }
 }
 </script>

@@ -2032,7 +2032,7 @@ progress {
   --bs-table-active-color: var(--bs-body-color);
   --bs-table-active-bg: rgba(0, 0, 0, 0.1);
   --bs-table-hover-color: var(--bs-body-color);
-  --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+  --bs-table-hover-bg: rgba(0, 0, 0, 0.04);
   width: 100%;
   margin-bottom: 1rem;
   vertical-align: top;
@@ -2265,7 +2265,6 @@ progress {
   font-weight: 400;
   line-height: 1.5;
   color: var(--bs-body-color);
-  background-color: var(--bs-tertiary-bg);
   background-clip: padding-box;
   border: var(--bs-border-width) solid var(--bs-border-color);
   -webkit-appearance: none;
@@ -2294,11 +2293,8 @@ progress {
 }
 .form-control:focus {
   color: var(--bs-body-color);
-  background-color: var(--bs-tertiary-bg);
-  border-color: #a8abdf;
+  border-color: #dbdbdb;
   outline: 0;
-  -webkit-box-shadow: 0 0 0 0.15rem rgba(81, 86, 190, 0.25);
-  box-shadow: 0 0 0 0.15rem rgba(81, 86, 190, 0.25);
 }
 .form-control::-webkit-date-and-time-value {
   min-width: 85px;
@@ -2492,7 +2488,6 @@ textarea.form-control-lg {
   font-weight: 400;
   line-height: 1.5;
   color: var(--bs-body-color);
-  background-color: var(--bs-tertiary-bg);
   background-image: var(--bs-form-select-bg-img),
     var(--bs-form-select-bg-icon, none);
   background-repeat: no-repeat;
@@ -2518,10 +2513,8 @@ textarea.form-control-lg {
   }
 }
 .form-select:focus {
-  border-color: #a8abdf;
+  border-color: #dbdbdb;
   outline: 0;
-  -webkit-box-shadow: 0 0 0 0.15rem rgba(81, 86, 190, 0.25);
-  box-shadow: 0 0 0 0.15rem rgba(81, 86, 190, 0.25);
 }
 .form-select[multiple],
 .form-select[size]:not([size="1"]) {

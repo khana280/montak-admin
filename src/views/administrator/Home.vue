@@ -3,15 +3,12 @@
     <TheHeader />
     <TheSideBar />
     <div class="main-content">
-
       <div class="page-content">
         <div class="container-fluid">
           <TheBreadCrumb />
-
-
-        </div> <!-- container-fluid -->
+          <slot></slot>
+        </div>
       </div>
-      <!-- End Page-content -->
     </div>
   </div>
 </template>
