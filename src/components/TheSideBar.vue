@@ -16,24 +16,10 @@
             </RouterLink>
           </li>
           <li :class="$route.path.includes('usulan-judul') ? 'mm-active' : ''">
-            <a href="javascript: void(0);" class="has-arrow">
+            <RouterLink to="/mahasiswa/usulan-judul">
               <i data-feather="upload-cloud"></i>
               <span data-key="t-dashboard">Usulan Judul</span>
-            </a>
-            <ul class="sub-menu mm-collapse" :class="$route.path.includes('usulan-judul') ? 'mm-show' : ''"
-            aria-expanded="false">
-              <li :class="$route.path.includes('kerja-praktek') ? 'mm-active' : ''">
-                <RouterLink to="/mahasiswa/usulan-judul/kerja-praktek">
-                  <span data-key="t-calendar">Kerja Praktek</span>
-                </RouterLink>
-              </li>
-
-              <li :class="$route.path.includes('tugas-akhir') ? 'mm-active' : ''">
-                <RouterLink to="/mahasiswa/usulan-judul/tugas-akhir">
-                  <span data-key="t-chat">Tugas Akhir</span>
-                </RouterLink>
-              </li>
-            </ul>
+            </RouterLink>
           </li>
           <li>
             <RouterLink to="/mahasiswa/pembimbingan">

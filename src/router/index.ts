@@ -12,20 +12,12 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/administrator/Dashboard.vue')
   },
   {
-    path: '/mahasiswa/usulan-judul/kerja-praktek',
-    name: 'Usulan Judul Kerja Praktek',
+    path: '/mahasiswa/usulan-judul',
+    name: 'Usulan Judul',
     meta: {
-      title: 'Usulan Judul Kerja Praktek'
+      title: 'Usulan Judul'
     },
-    component: () => import('../views/administrator/PPWT.vue')
-  },
-  {
-    path: '/mahasiswa/usulan-judul/tugas-akhir',
-    name: 'Usulan Judul Tugas Akhir',
-    meta: {
-      title: 'Usulan Judul Tugas Akhir'
-    },
-    component: () => import('../views/administrator/PPFT.vue')
+    component: () => import('../views/administrator/SubmissionTitle.vue')
   },
   {
     path: '/mahasiswa/pembimbingan',
