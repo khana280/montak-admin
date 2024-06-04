@@ -72,6 +72,9 @@ onMounted(() => {
   const width = window.innerWidth;
   if (width < 1024) {
     document.body.setAttribute('data-sidebar-size', 'sm');
+    if (document.body.classList.contains('sidebar-enable')) {
+      document.body.classList.remove('sidebar-enable');
+    }
   } else {
     document.body.setAttribute('data-sidebar-size', 'lg');
   }

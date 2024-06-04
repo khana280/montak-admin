@@ -19,6 +19,6 @@ import TheBreadCrumb from '../../components/TheBreadCrumb.vue';
 import { onMounted } from 'vue';
 
 onMounted(() => {
-  document.body.setAttribute('data-sidebar', 'blue');
-})
+  document.body.setAttribute('data-sidebar', 'red');
+});
 </script>

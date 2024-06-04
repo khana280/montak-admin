@@ -4,12 +4,12 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
+    path: '/mahasiswa',
     name: 'Beranda',
     meta: {
       title: 'Beranda'
     },
-    component: () => import('../views/administrator/Dashboard.vue')
+    component: () => import('../views/student/Dashboard.vue')
   },
   {
     path: '/mahasiswa/usulan-judul',
@@ -17,7 +17,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       title: 'Usulan Judul'
     },
-    component: () => import('../views/administrator/SubmissionTitle.vue')
+    component: () => import('../views/student/SubmissionTitle.vue')
   },
   {
     path: '/mahasiswa/pembimbingan',
@@ -25,7 +25,31 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       title: 'Pembimbingan'
     },
-    component: () => import('../views/administrator/Mentoring.vue')
+    component: () => import('../views/student/Mentoring.vue')
+  },
+  {
+    path: '/mahasiswa/jadwal-ujian',
+    name: 'Jadwal Ujian',
+    meta: {
+      title: 'Jadwal Ujian'
+    },
+    component: () => import('../views/student/Schedule.vue')
+  },
+  {
+    path: '/mahasiswa/data-keuangan',
+    name: 'Data Keuangan',
+    meta: {
+      title: 'Data Keuangan'
+    },
+    component: () => import('../views/student/FinancialData.vue')
+  },
+  {
+    path: '/administrator',
+    name: 'Administrator',
+    meta: {
+      title: 'Administrator'
+    },
+    component: () => import('../views/administrator/Dashboard.vue')
   }
 ];
 

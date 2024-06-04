@@ -21,23 +21,23 @@
               <span data-key="t-dashboard">Usulan Judul</span>
             </RouterLink>
           </li>
-          <li>
+          <li :class="$route.path.includes('pembimbingan') ? 'mm-active' : ''">
             <RouterLink to="/mahasiswa/pembimbingan">
               <i data-feather="check-square"></i>
               <span data-key="t-dashboard">Pembimbingan</span>
             </RouterLink>
           </li>
-          <li>
-            <a href="index.html">
+          <li :class="$route.path.includes('ujian') ? 'mm-active' : ''">
+            <RouterLink to="/mahasiswa/jadwal-ujian">
               <i data-feather="calendar"></i>
               <span data-key="t-dashboard">Jadwal Ujian</span>
-            </a>
+            </RouterLink>
           </li>
-          <li>
-            <a href="index.html">
+          <li :class="$route.path.includes('data-keuangan') ? 'mm-active' : ''">
+            <RouterLink to="/mahasiswa/data-keuangan">
               <i data-feather="credit-card"></i>
               <span data-key="t-dashboard">Data Keuangan</span>
-            </a>
+            </RouterLink>
           </li>
         </ul>
       </div>

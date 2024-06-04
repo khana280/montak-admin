@@ -1,16 +1,14 @@
+<script setup lang="ts">
+import BackClick from '../../components/BackClick.vue';
+const emit = defineEmits(['isClick']);
+const getClick = (value: boolean) => {
+  emit('isClick', value);
+};
+</script>
 <template>
   <div class="row">
     <div class="col-6">
-      <button type="button" class="btn btn-secondary float-start me-3" @click="backButton()">
-        <i class="bx bx-arrow-back"></i>
-      </button>
-      <h6>
-        INFORMATIKA
-        <br>
-        <small>
-          HALAMAN USULAN JUDUL
-        </small>
-      </h6>
+      <backClick @isClick="getClick" title="Informatika" subTitle="Halaman Usulan Judul" />
     </div>
     <div class="col-6 text-end">
       <button type="button" class="btn btn-danger waves-effect btn-label waves-light">
@@ -104,11 +102,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-const emit = defineEmits(['isClick']);
-
-const backButton = () => {
-    emit('isClick', false);
-}
-</script>

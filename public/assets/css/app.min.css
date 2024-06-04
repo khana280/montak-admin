@@ -1009,6 +1009,10 @@ body[data-sidebar="brand"] .vertical-menu {
   background-color: #5156be;
 }
 
+body[data-sidebar="blue"] .vertical-menu {
+  background-color: #2980b9;
+}
+
 body[data-sidebar="red"] .vertical-menu {
   background-color: #c0392b;
 }
@@ -1053,6 +1057,44 @@ body[data-sidebar="red"] .mm-active .active svg {
   color: #fff !important;
   fill: rgba(255, 255, 255, 0.1) !important;
 }
+
+body[data-sidebar="blue"] .navbar-brand-box {
+  background-color: #2874a4;
+  -webkit-box-shadow: 0 1px 0 #2874a4;
+  box-shadow: 0 1px 0 #2874a4;
+}
+body[data-sidebar="blue"] .navbar-brand-box .logo-dark {
+  display: none;
+}
+body[data-sidebar="blue"] .navbar-brand-box .logo-light {
+  display: block;
+}
+body[data-sidebar="blue"] .navbar-brand-box .logo {
+  color: #fff !important;
+}
+body[data-sidebar="blue"] .mm-active {
+  color: #fff !important;
+}
+body[data-sidebar="blue"] .mm-active > a {
+  color: #fff !important;
+}
+body[data-sidebar="blue"] .mm-active > a i {
+  color: #fff !important;
+}
+body[data-sidebar="blue"] .mm-active > a svg {
+  color: #fff !important;
+  fill: rgba(255, 255, 255, 0.1) !important;
+}
+body[data-sidebar="blue"] .mm-active .active {
+  color: #fff !important;
+}
+body[data-sidebar="blue"] .mm-active .active svg {
+  color: #fff !important;
+  fill: rgba(255, 255, 255, 0.1) !important;
+}
+
+
+
 body[data-sidebar="brand"] .navbar-brand-box .logo-dark {
   display: none;
 }
@@ -1153,6 +1195,76 @@ body[data-sidebar="red"][data-sidebar-size="sm"]
   color: #fff;
 }
 
+@media (min-width: 992px) {
+  body[data-sidebar="blue"] #vertical-menu-btn {
+    color: #e9ecef;
+  }
+}
+body[data-sidebar="blue"] #sidebar-menu ul li.menu-title {
+  color: rgba(255, 255, 255, 0.6);
+}
+body[data-sidebar="blue"] #sidebar-menu ul li a {
+  color: rgba(255, 255, 255, 0.6);
+}
+body[data-sidebar="blue"] #sidebar-menu ul li a i {
+  color: rgba(255, 255, 255, 0.6);
+}
+body[data-sidebar="blue"] #sidebar-menu ul li a svg {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+body[data-sidebar="blue"] #sidebar-menu ul li a:hover,
+body[data-sidebar="blue"] #sidebar-menu ul li a:hover svg {
+  color: white !important;
+}
+
+body[data-sidebar="blue"] #sidebar-menu ul li .mm-active,
+body[data-sidebar="blue"] #sidebar-menu ul li .mm-active svg {
+  color: white !important;
+}
+
+body[data-sidebar="blue"] #sidebar-menu ul li a.waves-effect .waves-ripple {
+  background: rgba(255, 255, 255, 0.1);
+}
+body[data-sidebar="blue"] #sidebar-menu ul li a:hover {
+  color: #fff;
+}
+body[data-sidebar="blue"] #sidebar-menu ul li a:hover i {
+  color: #fff;
+}
+body[data-sidebar="blue"] #sidebar-menu ul li ul.sub-menu li a {
+  color: rgba(255, 255, 255, 0.5);
+}
+body[data-sidebar="blue"] #sidebar-menu ul li ul.sub-menu li a:hover {
+  color: #fff;
+}
+body[data-sidebar="blue"] .sidebar-alert {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+}
+body[data-sidebar="blue"] .sidebar-alert .alertcard-title {
+  color: #fff;
+}
+body[data-sidebar="blue"][data-sidebar-size="sm"][data-topbar="dark"]
+  #vertical-menu-btn {
+  color: #e9ecef;
+}
+body[data-sidebar="blue"][data-sidebar-size="sm"][data-topbar="light"]
+  #vertical-menu-btn {
+  color: #e9ecef;
+}
+body[data-sidebar="blue"][data-sidebar-size="sm"] #vertical-menu-btn {
+  color: var(--bs-header-item-color);
+}
+body[data-sidebar="blue"][data-sidebar-size="sm"]
+  .vertical-menu
+  #sidebar-menu
+  > ul
+  > li:hover
+  > a {
+  /* background-color: #585dc1; */
+  color: #fff;
+}
 @media (min-width: 992px) {
   body[data-sidebar="brand"] #vertical-menu-btn {
     color: #e9ecef;
