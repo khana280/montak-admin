@@ -4,59 +4,70 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/mahasiswa',
+    path: '/administrator',
     name: 'Beranda',
     meta: {
       title: 'Beranda'
     },
-    component: () => import('../views/student/Dashboard.vue')
+    component: () => import('../views/Administrator/Dashboard.vue')
   },
   {
-    path: '/mahasiswa/usulan-judul',
-    name: 'Usulan Judul',
+    path: '/administrator/pendaftaran',
+    name: 'Pendaftaran',
     meta: {
-      title: 'Usulan Judul'
+      title: 'Pendaftaran'
     },
-    component: () => import('../views/student/SubmissionTitle.vue')
+    component: () => import('../views/Administrator/Registration.vue')
   },
   {
-    path: '/mahasiswa/pembimbingan',
-    name: 'Pembimbingan',
+    path: '/administrator/verifikasi-persyaratan',
+    name: 'Verifikasi Persyaratan',
     meta: {
-      title: 'Pembimbingan'
+      title: 'Verifikasi Persyaratan'
     },
-    component: () => import('../views/student/Mentoring.vue')
+    component: () => import('../views/Administrator/RegistrationRequirement.vue')
   },
   {
-    path: '/mahasiswa/jadwal-ujian',
-    name: 'Jadwal Ujian',
+    path: '/administrator/jadwal',
+    name: 'Plotting Jadwal Ujian',
     meta: {
-      title: 'Jadwal Ujian'
+      title: 'Plotting Jadwal Ujian'
     },
-    component: () => import('../views/student/Schedule.vue')
+    component: () => import('../views/Administrator/Schedule.vue')
   },
   {
-    path: '/mahasiswa/data-keuangan',
-    name: 'Data Keuangan',
+    path: '/administrator/pengaturan/batas-pendaftaran',
+    name: 'Pengaturan Batas Pendaftaran',
     meta: {
-      title: 'Data Keuangan'
+      title: 'Pengaturan Batas Pendaftaran'
     },
-    component: () => import('../views/student/FinancialData.vue')
+    component: () => import('../views/Administrator/Settings/RegistrationTime.vue')
   },
   {
-    path: '/administrator',
-    name: 'Administrator',
+    path: '/administrator/pengaturan/jenis-ujian',
+    name: 'Pengaturan Jenis Ujian',
     meta: {
-      title: 'Administrator'
+      title: 'Pengaturan Jenis Ujian'
     },
-    component: () => import('../views/administrator/Dashboard.vue')
-  }
+    component: () => import('../views/Administrator/Settings/TypeTask.vue')
+  },
+  {
+    path: '/administrator/pengaturan/nilai',
+    name: 'Pengaturan Persentase Nilai',
+    meta: {
+      title: 'Pengaturan Persentase Nilai'
+    },
+    component: () => import('../views/Administrator/Settings/TypeTask.vue')
+  },
+
+
 ];
 
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  linkActiveClass: 'active',
 });
 
 router.beforeEach(async (to, from, next) => {
