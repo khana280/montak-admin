@@ -1,5 +1,5 @@
 <template>
-  <div class="row" v-if="$route.name !== 'Beranda'">
+  <div class="row" v-if="$route.path !== '/administrator' && $route.path !== '/mahasiswa'">
     <div class="col-12">
       <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
         <h4 class="mb-sm-0">{{ $route.name  }}</h4>

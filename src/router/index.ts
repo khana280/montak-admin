@@ -9,7 +9,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       title: 'Beranda'
     },
-    component: () => import('../views/Administrator/Dashboard.vue')
+    component: () => import('../views/administrator/Dashboard.vue')
   },
   {
     path: '/administrator/pendaftaran',
@@ -17,7 +17,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       title: 'Pendaftaran'
     },
-    component: () => import('../views/Administrator/Registration.vue')
+    component: () => import('../views/administrator/Registration.vue')
   },
   {
     path: '/administrator/verifikasi-persyaratan',
@@ -25,7 +25,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       title: 'Verifikasi Persyaratan'
     },
-    component: () => import('../views/Administrator/RegistrationRequirement.vue')
+    component: () => import('../views/administrator/RegistrationRequirement.vue')
   },
   {
     path: '/administrator/jadwal',
@@ -33,7 +33,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       title: 'Plotting Jadwal Ujian'
     },
-    component: () => import('../views/Administrator/Schedule.vue')
+    component: () => import('../views/administrator/Schedule.vue')
   },
   {
     path: '/administrator/pengaturan/batas-pendaftaran',
@@ -41,7 +41,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       title: 'Pengaturan Batas Pendaftaran'
     },
-    component: () => import('../views/Administrator/Settings/RegistrationTime.vue')
+    component: () => import('../views/administrator/Settings/RegistrationTime.vue')
   },
   {
     path: '/administrator/pengaturan/jenis-ujian',
@@ -49,7 +49,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       title: 'Pengaturan Jenis Ujian'
     },
-    component: () => import('../views/Administrator/Settings/TypeTask.vue')
+    component: () => import('../views/administrator/Settings/TypeTask.vue')
   },
   {
     path: '/administrator/pengaturan/nilai',
@@ -57,7 +57,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       title: 'Pengaturan Persentase Nilai'
     },
-    component: () => import('../views/Administrator/Settings/PercentageValue.vue')
+    component: () => import('../views/administrator/Settings/PercentageValue.vue')
   },
   {
     path: '/administrator/pengaturan/biaya',
@@ -65,7 +65,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       title: 'Pengaturan Biaya'
     },
-    component: () => import('../views/Administrator/Settings/Cost.vue')
+    component: () => import('../views/administrator/Settings/Cost.vue')
   },
   {
     path: '/administrator/pengaturan/syarat-kelulusan',
@@ -73,8 +73,24 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       title: 'Pengaturan Syarat Kelulusan'
     },
-    component: () => import('../views/Administrator/Settings/GradulationRequirement.vue')
+    component: () => import('../views/administrator/Settings/GradulationRequirement.vue')
   },
+  {
+    path: '/mahasiswa',
+    name: 'Dashboard Mahasiswa',
+    meta: {
+      title: 'Dashboard'
+    },
+    component: () => import('../views/student/Dashboard.vue')
+  },
+  {
+    path: '/mahasiswa/usulan-judul',
+    name: 'Usulan Judul',
+    meta: {
+      title: 'Usulan Judul'
+    },
+    component: () => import('../views/student/Submission.vue')
+  }
 
 
 ];

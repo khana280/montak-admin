@@ -17065,8 +17065,10 @@ span.flatpickr-weekday {
 }
 
 .bg-marketplace {
-  background-image: url(../images/nft/marketplace.png);
-  background-size: cover
+  background-image: url(../images/marketplace.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .dash-countdown .countdownlist .count-num {

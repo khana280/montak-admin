@@ -74,10 +74,10 @@ import { onMounted, ref } from 'vue';
     if(window.innerWidth > 992) {
       if(document.documentElement.getAttribute('data-sidebar-size') === 'lg') {
         document.documentElement.setAttribute('data-sidebar-size', 'sm');
-      } else {
-        document.documentElement.setAttribute('data-sidebar-size', 'lg');
+        } else {
+          document.documentElement.setAttribute('data-sidebar-size', 'lg');
+          }
         isClick.value = !isClick.value;
-      }
     } else {
       document.body.classList.toggle('vertical-sidebar-enable');
     }

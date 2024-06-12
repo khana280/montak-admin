@@ -11,7 +11,7 @@
                   <p class="mb-0 text-muted text-truncate">
                     <span class="badge bg-light text-success mb-0"> 
                     <i class="ri-arrow-up-line align-middle"></i> 16.24 % 
-                    </span> Registrasi Ulang. <b>56</b> Total Mahasiswa
+                    </span> Registrasi Ulang.
                   </p>
               </div>
               <div>
@@ -67,7 +67,7 @@
               <div>
                 <div class="avatar-sm flex-shrink-0">
                   <span class="avatar-title bg-info-subtle rounded-circle fs-2">
-                    <i class=" ri-cash-line text-info"></i>
+                    <i class="ri-open-arm-line text-info"></i>
                   </span>
                 </div>
               </div>
