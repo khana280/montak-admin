@@ -73,7 +73,7 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       title: 'Pengaturan Syarat Kelulusan'
     },
-    component: () => import('../views/Administrator/Settings/Cost.vue')
+    component: () => import('../views/Administrator/Settings/GradulationRequirement.vue')
   },
 
 
