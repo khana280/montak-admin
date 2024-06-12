@@ -57,7 +57,23 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       title: 'Pengaturan Persentase Nilai'
     },
-    component: () => import('../views/Administrator/Settings/TypeTask.vue')
+    component: () => import('../views/Administrator/Settings/PercentageValue.vue')
+  },
+  {
+    path: '/administrator/pengaturan/biaya',
+    name: 'Pengaturan Biaya',
+    meta: {
+      title: 'Pengaturan Biaya'
+    },
+    component: () => import('../views/Administrator/Settings/Cost.vue')
+  },
+  {
+    path: '/administrator/pengaturan/syarat-kelulusan',
+    name: 'Pengaturan Syarat Kelulusan',
+    meta: {
+      title: 'Pengaturan Syarat Kelulusan'
+    },
+    component: () => import('../views/Administrator/Settings/Cost.vue')
   },
 
 

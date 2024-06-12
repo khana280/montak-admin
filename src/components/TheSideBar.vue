@@ -55,13 +55,18 @@
                   </RouterLink>
                 </li>
                 <li class="nav-item">
-                  <RouterLink to="/pengaturan/nilai" class="nav-link menu-link">
+                  <RouterLink to="/administrator/pengaturan/nilai" class="nav-link menu-link">
                     Persentase Nilai
                   </RouterLink>
                 </li>
                 <li class="nav-item">
-                  <RouterLink to="/pengaturan/biaya" class="nav-link menu-link">
+                  <RouterLink to="/administrator/pengaturan/biaya" class="nav-link menu-link">
                     Biaya
+                  </RouterLink>
+                </li>
+                <li class="nav-item">
+                  <RouterLink to="/administrator/pengaturan/syarat-kelulusan" class="nav-link menu-link">
+                    Syarat Kelulusan
                   </RouterLink>
                 </li>
               </ul>
