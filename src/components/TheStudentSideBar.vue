@@ -23,19 +23,19 @@
             </RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink to="/administrator/verifikasi-persyaratan" class="nav-link menu-link">
+            <RouterLink to="/mahasiswa/bimbingan" class="nav-link menu-link">
               <i class="ri-task-line"></i>
               <span>Bimbingan</span>
             </RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink to="/administrator/jadwal" class="nav-link menu-link">
+            <RouterLink to="/mahasiswa/jadwal" class="nav-link menu-link">
               <i class=" ri-calendar-check-line"></i>
               <span>Jadwal Ujian</span>
             </RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink to="/administrator/jadwal" class="nav-link menu-link">
+            <RouterLink to="/mahasiswa/data-keuangan" class="nav-link menu-link">
               <i class=" ri-calendar-check-line"></i>
               <span>Data Keuangan</span>
             </RouterLink>

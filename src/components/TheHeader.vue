@@ -44,11 +44,15 @@
             </button>
             <div class="dropdown-menu dropdown-menu-end">
               <h6 class="dropdown-header">Welcome Khana Zulfana Imam!</h6>
-              <RouterLink to="" class="dropdown-item">
+              <RouterLink to="/mahasiswa" class="dropdown-item">
+                <i class="mdi mdi-account-cash-outline text-muted fs-16 align-middle me-1"></i>
+                <span>Mahasiswa</span>
+              </RouterLink>
+              <RouterLink to="/administrator" class="dropdown-item">
                 <i class="mdi mdi-account-cash-outline text-muted fs-16 align-middle me-1"></i>
                 <span>Admin Keuangan</span>
               </RouterLink>
-              <RouterLink to="" class="dropdown-item">
+              <RouterLink to="/administrator" class="dropdown-item">
                 <i class="mdi mdi-account-lock-open-outline text-muted fs-16 align-middle me-1"></i>
                 <span>Adminisrator </span>
               </RouterLink>

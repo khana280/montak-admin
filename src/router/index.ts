@@ -90,9 +90,31 @@ const routes: Array<RouteRecordRaw> = [
       title: 'Usulan Judul'
     },
     component: () => import('../views/student/Submission.vue')
+  },
+  {
+    path: '/mahasiswa/bimbingan',
+    name: 'Bimbingan',
+    meta: {
+      title: 'Bimbingan'
+    },
+    component: () => import('../views/student/Mentoring.vue')
+  },
+  {
+    path: '/mahasiswa/jadwal',
+    name: 'Jadwal Ujian',
+    meta: {
+      title: 'Jadwal Ujian'
+    },
+    component: () => import('../views/student/Schedule.vue')
+  },
+  {
+    path: '/mahasiswa/data-keuangan',
+    name: 'Data Keuangan',
+    meta: {
+      title: 'Data Keuangan'
+    },
+    component: () => import('../views/student/FinancialData.vue')
   }
-
-
 ];
 
 
