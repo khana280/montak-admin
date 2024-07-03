@@ -1,132 +1,189 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-
-
+import useToken from "../composables/token";
+import { useSession } from "../stores/session";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/administrator',
-    name: 'Beranda',
+    path: "/",
+    name: "After Login",
     meta: {
-      title: 'Beranda'
+      title: "After Login",
     },
-    component: () => import('../views/administrator/Dashboard.vue')
+    component: () => import("../views/authentication/AfterLogin.vue"),
   },
   {
-    path: '/administrator/pendaftaran',
-    name: 'Pendaftaran',
+    path: "/login",
+    name: "Login",
     meta: {
-      title: 'Pendaftaran'
+      title: "Login",
     },
-    component: () => import('../views/administrator/Registration.vue')
+    component: () => import("../views/authentication/index.vue"),
   },
   {
-    path: '/administrator/verifikasi-persyaratan',
-    name: 'Verifikasi Persyaratan',
+    path: "/administrator",
+    name: "Beranda",
     meta: {
-      title: 'Verifikasi Persyaratan'
+      title: "Beranda",
     },
-    component: () => import('../views/administrator/RegistrationRequirement.vue')
+    component: () => import("../views/administrator/Dashboard.vue"),
   },
   {
-    path: '/administrator/jadwal',
-    name: 'Plotting Jadwal Ujian',
+    path: "/administrator/pendaftaran",
+    name: "Pendaftaran",
     meta: {
-      title: 'Plotting Jadwal Ujian'
+      title: "Pendaftaran",
     },
-    component: () => import('../views/administrator/Schedule.vue')
+    component: () => import("../views/administrator/Registration.vue"),
   },
   {
-    path: '/administrator/pengaturan/batas-pendaftaran',
-    name: 'Pengaturan Batas Pendaftaran',
+    path: "/administrator/verifikasi-persyaratan",
+    name: "Verifikasi Persyaratan",
     meta: {
-      title: 'Pengaturan Batas Pendaftaran'
+      title: "Verifikasi Persyaratan",
     },
-    component: () => import('../views/administrator/Settings/RegistrationTime.vue')
+    component: () =>
+      import("../views/administrator/RegistrationRequirement.vue"),
   },
   {
-    path: '/administrator/pengaturan/jenis-ujian',
-    name: 'Pengaturan Jenis Ujian',
+    path: "/administrator/jadwal",
+    name: "Plotting Jadwal Ujian",
     meta: {
-      title: 'Pengaturan Jenis Ujian'
+      title: "Plotting Jadwal Ujian",
     },
-    component: () => import('../views/administrator/Settings/TypeTask.vue')
+    component: () => import("../views/administrator/Schedule.vue"),
   },
   {
-    path: '/administrator/pengaturan/nilai',
-    name: 'Pengaturan Persentase Nilai',
+    path: "/administrator/pengaturan/batas-pendaftaran",
+    name: "Pengaturan Batas Pendaftaran",
     meta: {
-      title: 'Pengaturan Persentase Nilai'
+      title: "Pengaturan Batas Pendaftaran",
     },
-    component: () => import('../views/administrator/Settings/PercentageValue.vue')
+    component: () =>
+      import("../views/administrator/Settings/RegistrationTime.vue"),
   },
   {
-    path: '/administrator/pengaturan/biaya',
-    name: 'Pengaturan Biaya',
+    path: "/administrator/pengaturan/jenis-ujian",
+    name: "Pengaturan Jenis Ujian",
     meta: {
-      title: 'Pengaturan Biaya'
+      title: "Pengaturan Jenis Ujian",
     },
-    component: () => import('../views/administrator/Settings/Cost.vue')
+    component: () => import("../views/administrator/Settings/TypeTask.vue"),
   },
   {
-    path: '/administrator/pengaturan/syarat-kelulusan',
-    name: 'Pengaturan Syarat Kelulusan',
+    path: "/administrator/pengaturan/nilai",
+    name: "Pengaturan Persentase Nilai",
     meta: {
-      title: 'Pengaturan Syarat Kelulusan'
+      title: "Pengaturan Persentase Nilai",
     },
-    component: () => import('../views/administrator/Settings/GradulationRequirement.vue')
+    component: () =>
+      import("../views/administrator/Settings/PercentageValue.vue"),
   },
   {
-    path: '/mahasiswa',
-    name: 'Dashboard Mahasiswa',
+    path: "/administrator/pengaturan/biaya",
+    name: "Pengaturan Biaya",
     meta: {
-      title: 'Dashboard'
+      title: "Pengaturan Biaya",
     },
-    component: () => import('../views/student/Dashboard.vue')
+    component: () => import("../views/administrator/Settings/Cost.vue"),
   },
   {
-    path: '/mahasiswa/usulan-judul',
-    name: 'Usulan Judul',
+    path: "/administrator/pengaturan/syarat-kelulusan",
+    name: "Pengaturan Syarat Kelulusan",
     meta: {
-      title: 'Usulan Judul'
+      title: "Pengaturan Syarat Kelulusan",
     },
-    component: () => import('../views/student/Submission.vue')
+    component: () =>
+      import("../views/administrator/Settings/GradulationRequirement.vue"),
   },
   {
-    path: '/mahasiswa/bimbingan',
-    name: 'Bimbingan',
+    path: "/mahasiswa",
+    name: "Dashboard Mahasiswa",
     meta: {
-      title: 'Bimbingan'
+      title: "Dashboard",
     },
-    component: () => import('../views/student/Mentoring.vue')
+    beforeEnter: (to, _from, next) => {
+      if(to.meta.admintendik) {
+        next('/administrator');
+      }
+      if(to.meta.admin) {
+        next('/administrator');
+      }
+      next()
+    },
+    component: () => import("../views/student/Dashboard.vue"),
   },
   {
-    path: '/mahasiswa/jadwal',
-    name: 'Jadwal Ujian',
+    path: "/mahasiswa/usulan-judul",
+    name: "Usulan Judul",
     meta: {
-      title: 'Jadwal Ujian'
+      title: "Usulan Judul",
     },
-    component: () => import('../views/student/Schedule.vue')
+    component: () => import("../views/student/Submission.vue"),
   },
   {
-    path: '/mahasiswa/data-keuangan',
-    name: 'Data Keuangan',
+    path: "/mahasiswa/bimbingan",
+    name: "Bimbingan",
     meta: {
-      title: 'Data Keuangan'
+      title: "Bimbingan",
     },
-    component: () => import('../views/student/FinancialData.vue')
+    component: () => import("../views/student/Mentoring.vue"),
+  },
+  {
+    path: "/mahasiswa/jadwal",
+    name: "Jadwal Ujian",
+    meta: {
+      title: "Jadwal Ujian",
+    },
+    component: () => import("../views/student/Schedule.vue"),
+  },
+  {
+    path: "/mahasiswa/data-keuangan",
+    name: "Data Keuangan",
+    meta: {
+      title: "Data Keuangan",
+    },
+    component: () => import("../views/student/FinancialData.vue"),
+  },
+  {
+    // error 404
+    path: "/:pathMatch(.*)*",
+    name: "Error",
+    meta: {
+      title: "Error",
+    },
+    component: () => import("../views/Error.vue"),
   }
 ];
-
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  linkActiveClass: 'active',
+  linkActiveClass: "active",
 });
 
-router.beforeEach(async (to, from, next) => {
-  next();
-})
+router.beforeEach(async (to, _from, next) => {
+  const { decodeToken, getToken } = useToken();
+  const session = useSession();
 
+  if (to.path === "/login" && getToken() === null) {
+    next();
+  } 
+
+  if(to.path === '/login' && getToken() !== null) {
+    next('/administrator');
+  }
+
+  if (to.path !== "/login" && getToken() !== null) {
+    if (session.getUser().id === "") {
+      const data = await decodeToken();
+      session.setUser(data);
+    }
+    next();
+  }
+
+  if (to.path !== "/login" && getToken() === null) {
+    next("/login");
+  }
+});
 
 export default router;

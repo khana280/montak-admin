@@ -33,34 +33,34 @@
           <div class="dropdown ms-sm-3 header-item topbar-user">
             <button type="button" class="btn material-shadow-none" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="d-flex align-items-center">
-                <img src="https://api.unira.ac.id/img/profil/mhs/8e35dc4c9c4b61b341800d1ef1f10eba.jpg" alt="header-thumbnail" class="rounded-circle header-profile-user">
+                <img :src="`https://api.unira.ac.id/${session.getUser().thumbnail}`" alt="header-thumbnail" class="rounded-circle header-profile-user">
                 <span class="text-start ms xl-2">
                   <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">
-                    Khana Zulfana Imam
+                    {{ session.getUser().nama }}
                   </span>
-                  <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text">Administrator</span>
+                  <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text">{{ session.getUser().roles[0] }}</span>
                 </span>
               </span>
             </button>
             <div class="dropdown-menu dropdown-menu-end">
-              <h6 class="dropdown-header">Welcome Khana Zulfana Imam!</h6>
+              <h6 class="dropdown-header">Welcome {{ session.getUser().nama }}!</h6>
               <RouterLink to="/mahasiswa" class="dropdown-item">
                 <i class="mdi mdi-account-cash-outline text-muted fs-16 align-middle me-1"></i>
                 <span>Mahasiswa</span>
               </RouterLink>
-              <RouterLink to="/administrator" class="dropdown-item">
+              <RouterLink to="/administrator" class="dropdown-item" v-if="session.getUser().roles.find((item: string) => item === 'admin')">
                 <i class="mdi mdi-account-cash-outline text-muted fs-16 align-middle me-1"></i>
                 <span>Admin Keuangan</span>
               </RouterLink>
-              <RouterLink to="/administrator" class="dropdown-item">
+              <RouterLink to="/administrator-tendik" class="dropdown-item" v-if="session.getUser().roles.find((item: string) => item === 'tendik')">
                 <i class="mdi mdi-account-lock-open-outline text-muted fs-16 align-middle me-1"></i>
                 <span>Adminisrator </span>
               </RouterLink>
               <div class="dropdown-divider"></div>
-              <RouterLink to="" class="dropdown-item">
+              <button type="button" to="/login" class="dropdown-item" @click="tryLogout">
                 <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i>
                 <span class="align-middle">Logout</span>
-              </RouterLink>
+              </button>
             </div>
           </div>
         </div>
@@ -72,20 +72,35 @@
 
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+  import { onMounted, ref } from 'vue';
+  import useToken from '../composables/token';
+  import { useSession } from '../stores/session';
+  import router from '../router';
+    
+  const session = useSession();
+  const { clearToken } = useToken();
+
   const isClick = ref(false);
+
   const toggleMenu = () => {
     if(window.innerWidth > 992) {
       if(document.documentElement.getAttribute('data-sidebar-size') === 'lg') {
         document.documentElement.setAttribute('data-sidebar-size', 'sm');
         } else {
           document.documentElement.setAttribute('data-sidebar-size', 'lg');
-          }
+        }
         isClick.value = !isClick.value;
     } else {
       document.body.classList.toggle('vertical-sidebar-enable');
     }
   }
+
+  const tryLogout = () => {
+    clearToken();
+    session.$reset();
+    router.push('/login');
+  }
+
   onMounted(() => {
     if(window.innerWidth < 768) {
       document.body.classList.add('two-column-panel');

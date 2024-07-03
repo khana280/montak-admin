@@ -26,7 +26,7 @@
               <div class="col-6 col-md-3">
                 <div class="mt-3 mt-md-0 py-4 px-3">
                   <h5 class="text-muted text-uppercase fs-13">
-                    Jumlah Hari Pengerjaan
+                    Jumlah Proposal Diusulkan
                   </h5>
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
@@ -62,7 +62,7 @@
               <div class="col-6 col-md-3">
                 <div class="mt-3 mt-lg-0 py-4 px-3">
                   <h5 class="text-muted text-uppercase fs-13">
-                    Total Proposal Diusulkan
+                    Status Pengerjaan TA
                   </h5>
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
@@ -86,7 +86,7 @@
       </div>
       <!-- end col -->
     </div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-12">
           <div class="card overflow-hidden">
               <div class="card-body bg-marketplace d-flex">
@@ -106,7 +106,7 @@
               </div>
           </div>
       </div>
-    </div>
+    </div> -->
   </Home>
 </template>
 
