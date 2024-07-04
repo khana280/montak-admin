@@ -121,6 +121,14 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../views/student/Submission.vue"),
   },
   {
+    path: "/mahasiswa/usulan-judul/create",
+    name: "Tambah Usulan Judul",
+    meta: {
+      title: "Tambah Usulan Judul",
+    },
+    component: () => import("../views/student/InsertSubmission.vue"),
+  },
+  {
     path: "/mahasiswa/bimbingan",
     name: "Bimbingan",
     meta: {

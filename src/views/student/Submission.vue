@@ -18,10 +18,10 @@
         </select>
       </div>
       <div class="col-auto ms-auto">
-        <button type="button" class="btn btn-success">
+        <RouterLink to="usulan-judul/create" type="button" class="btn btn-success">
           <i class="bx bx-plus-circle"></i>
           Tambah Usulan
-        </button>
+        </RouterLink>
       </div>
     </div>
     <div class="row" v-for="i in 3">

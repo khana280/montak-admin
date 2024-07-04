@@ -40,8 +40,8 @@ export default function useToken() {
   const refreshToken = async () => {
     try {
       validateTokenRefresh();
-      const response = await fetch(import.meta.env.VITE_API_GATEWAY + '/auth/refresh', {
-        method: 'GET',
+      const response = await fetch(import.meta.env.VITE_API_GATEWAY + '/auth/refresh-token', {
+        method: 'POST',
         headers: {
           'Authorization': 'Bearer ' + getToken().refresh_token
         }
